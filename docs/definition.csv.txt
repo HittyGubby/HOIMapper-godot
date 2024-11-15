@@ -1,0 +1,10 @@
+//explaining what each column means in definition.csv
+(btw fuck you paradox for your shitty code and structures)
+province id
+R
+G
+B
+type - land or sea
+isCostalprovince
+terrain
+continent id

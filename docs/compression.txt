@@ -1,0 +1,5 @@
+compressed original scattered files to avoid booming the repo
+just decompress right in the place(tbh idk what u need these for)
+dataextraction/*/map/flip/provinces_flipped.zip
+dataextraction/*/map/original/provinces_flipped.zip
+dataextraction/*/map/originaldata.zip
