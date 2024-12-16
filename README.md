@@ -2,20 +2,20 @@
 Alternative multi-platform HOI Mapper made using godot.(lame laptop ded when coding using unity)
 
 ### Current Progress:
-Messing with messy camera trails
+Province Click Handlers
 
 ### TODO:
 - [x] Fix Inversed Y Coordinate
 
-- [ ] Zoom Centered at Cursor Position
+- [x] Zoom Centered at Cursor Position
 
-- [ ] Removing Lerping Overflow at Map Boundaries
+- [x] Removing Lerping Overflow at Map Boundaries
 
-- [ ] Removing Stitch Lag on Looping the Map on the X Axis
+- [x] Removing Stitch Lag on Looping the Map on the X Axis
 
 - [ ] Detecting Clicks on Provinces by ID
 
-- [ ] Smoother Transition at Edge Strips Intersection
+- [x] Smoother Transition at Edge Strips Intersection
 
 LONG TERM PLANS
 
@@ -30,3 +30,5 @@ LONG TERM PLANS
 >MULTIPLATFORM COMPATIBILITY
 
 ~~=> ETA 2 MONTHS~~
+
+### **For FAQs go [here](https://github.com/HittyGubby/HOIMapper/tree/main/docs/faqs.md)**

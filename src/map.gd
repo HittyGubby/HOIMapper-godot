@@ -1,14 +1,9 @@
 extends Node3D
 var json = JSON.parse_string(FileAccess.open("res://data/vanilla/provinces_data.json", FileAccess.READ).get_as_text())
+var image : ImageTexture = load("res://data/vanilla/provinces.png")
 @export var map_width = 5632
 
-func get_mapdata():
-	return json
-
 func _ready():
-	create_map()
-
-func create_map():
 	for provname in json.keys():
 		for polygon in json[provname]:
 			var vertices = []
