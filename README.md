@@ -1,5 +1,5 @@
 # HOIMapper
-Alternative multi-platform HOI Mapper made using godot.(lame laptop ded when code using unity)
+Alternative multi-platform HOI Mapper made using godot.(lame laptop ded when coding using unity)
 
 ### Current Progress:
 Messing with messy camera trails
