@@ -1,0 +1,95 @@
+[gd_scene load_steps=9 format=3 uid="uid://8tasxwsf6glt"]
+
+[ext_resource type="Script" uid="uid://byqbp4xm2xscc" path="res://src/handler.gd" id="2_4yypg"]
+[ext_resource type="Script" uid="uid://rjwhtkmv804u" path="res://src/cam.gd" id="2_n5q4c"]
+[ext_resource type="Texture2D" uid="uid://de0yk4c5hoaxr" path="res://data/commons/gfx/reflection.png" id="3_3cfgd"]
+[ext_resource type="Script" uid="uid://dmipttlk6odff" path="res://src/debug.gd" id="3_omcri"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ma15"]
+transparency = 1
+albedo_texture = ExtResource("3_3cfgd")
+metallic = 1.0
+metallic_texture = ExtResource("3_3cfgd")
+roughness = 0.19
+roughness_texture = ExtResource("3_3cfgd")
+uv1_scale = Vector3(2, 1, 1)
+uv2_scale = Vector3(2, 1, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_cgv62"]
+material = SubResource("StandardMaterial3D_5ma15")
+size = Vector2(1126.4, 204.8)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fyndt"]
+bg_color = Color(0, 0, 0, 0.5)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="SystemFont" id="SystemFont_fyndt"]
+font_names = PackedStringArray("OCR A Extended")
+
+[node name="Kernel" type="Node3D"]
+
+[node name="Handlers" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_4yypg")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 50)
+fov = 90.0
+near = 0.001
+script = ExtResource("2_n5q4c")
+
+[node name="Light" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 100)
+light_energy = 0.521
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+directional_shadow_mode = 0
+directional_shadow_pancake_size = 10.0
+sky_mode = 1
+
+[node name="Map" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 102.4, 0)
+mesh = SubResource("PlaneMesh_cgv62")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.019
+anchor_top = 0.5
+anchor_right = 0.019
+anchor_bottom = 0.5
+offset_top = -23.0
+offset_right = 109.0
+offset_bottom = 23.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fyndt")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="DebugInfo" type="RichTextLabel" parent="UI/PanelContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/normal_font = SubResource("SystemFont_fyndt")
+text = "Debug
+Information
+What the fuck ever"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+script = ExtResource("3_omcri")

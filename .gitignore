@@ -8,6 +8,7 @@ export_presets.cfg
 
 # Imported translations (automatically generated from CSV files)
 *.translation
+*.import
 
 # Mono-specific ignores
 .mono/
@@ -16,3 +17,7 @@ mono_crash.*.json
 
 # specific
 .vscode
+
+.deprecated
+
+staged
